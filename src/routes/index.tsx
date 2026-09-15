@@ -1,25 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle, Youtube } from "lucide-react";
 
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
+import { RedesSociais } from "@/components/site/RedesSociais";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { heroImage, mensagens, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pb. Maurício Aguiar — Pregador e Mensagens" },
+      { title: "Pb. Maurício Aguiar — Pregador" },
       {
         name: "description",
         content:
-          "Site oficial do pregador Maurício Aguiar. Mensagens, pregações e convites para eventos e congressos.",
+          "Pregador brasileiro Maurício Aguiar. Acompanhe nas redes sociais — YouTube, Instagram e TikTok — e assista às mensagens em vídeo.",
       },
-      { property: "og:title", content: "Pb. Maurício Aguiar — Pregador e Mensagens" },
+      { property: "og:title", content: "Pb. Maurício Aguiar — Pregador" },
       {
         property: "og:description",
-        content: "Mensagens que transformam vidas. Conheça o ministério do Pb. Maurício Aguiar.",
+        content: "Um chamado. Uma mensagem. Uma missão. Siga o Pb. Maurício Aguiar nas redes sociais.",
       },
     ],
   }),
@@ -42,30 +43,31 @@ function Home() {
               <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-accent uppercase">
                 {site.titulo}
               </p>
-              <h1 className="font-display text-4xl leading-[0.9] tracking-tight text-primary-foreground uppercase sm:text-6xl">
-                Mensagens que
-                <br />
-                despertam a fé
+              <h1 className="font-display text-5xl leading-[0.9] tracking-tight text-primary-foreground uppercase sm:text-6xl">
+                Mauricio Aguiar
               </h1>
+              <p className="mt-5 font-display text-xl tracking-wide text-primary-foreground/85 uppercase">
+                {site.tagline}
+              </p>
               <p className="mt-6 max-w-md text-base leading-relaxed text-primary-foreground/75">
-                Pregador brasileiro, marido e servo comprometido com a Palavra. Levando esperança a
-                igrejas, congressos e eventos por todo o Brasil.
+                Pregador brasileiro levando esperança e a Palavra a igrejas, congressos e eventos
+                por todo o Brasil. Acompanhe o ministério nas redes sociais.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={site.whatsappLink}
+                  href={site.youtube}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold tracking-wide text-accent-foreground uppercase transition-opacity hover:opacity-90"
                 >
-                  <MessageCircle size={16} /> Convidar para pregar
+                  <Youtube size={16} /> Assistir no YouTube
                 </a>
-                <Link
-                  to="/mensagens"
+                <a
+                  href="#mensagens"
                   className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-colors hover:bg-primary-foreground/10"
                 >
-                  Ver mensagens <ArrowRight size={16} />
-                </Link>
+                  Ver vídeos <ArrowRight size={16} />
+                </a>
               </div>
             </div>
 
@@ -81,49 +83,48 @@ function Home() {
           </div>
         </section>
 
-        {/* Sobre resumo */}
-        <section className="mx-auto max-w-6xl px-5 py-16 md:py-24">
+        {/* Redes sociais */}
+        <RedesSociais />
+
+        {/* Vídeos / Mensagens */}
+        <section id="mensagens" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 md:py-24">
           <SectionHeading
-            eyebrow="Sobre"
-            title="Chamado para pregar a palavra"
-            description="Maurício Aguiar é pregador do evangelho, dedicado a ensinar com clareza, reverência e paixão. Suas mensagens alcançam milhares de pessoas em cultos, congressos e nas redes sociais."
+            eyebrow="Vídeos"
+            title="Mensagens em vídeo"
+            description="Uma seleção de pregações disponíveis no canal do YouTube. Clique para assistir."
           />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {mensagens.map((m) => (
+              <MensagemCard key={m.id} mensagem={m} />
+            ))}
+          </div>
           <Link
-            to="/sobre"
-            className="mt-6 inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] text-accent uppercase"
+            to="/mensagens"
+            className="mt-10 inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] text-accent uppercase transition-opacity hover:opacity-80"
           >
-            Conhecer a história <ArrowRight size={16} />
+            Ver todas as mensagens <ArrowRight size={16} />
           </Link>
         </section>
 
-        {/* Mensagens */}
-        <section className="border-t border-border/60 bg-secondary/40">
-          <div className="mx-auto max-w-6xl px-5 py-16 md:py-24">
-            <SectionHeading eyebrow="Mensagens" title="Pregações em destaque" />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {mensagens.map((m) => (
-                <MensagemCard key={m.id} mensagem={m} />
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Contato */}
-        <section className="mx-auto max-w-6xl px-5 py-16 text-center md:py-24">
-          <h2 className="font-display text-3xl leading-tight tracking-tight text-foreground uppercase sm:text-4xl">
-            Convide para o seu evento
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Agendas abertas para cultos, congressos e conferências. Fale diretamente pelo WhatsApp.
-          </p>
-          <a
-            href={site.whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
-          >
-            <MessageCircle size={16} /> {site.whatsappNumero}
-          </a>
+        <section className="border-t border-border/60 bg-secondary/40">
+          <div className="mx-auto max-w-6xl px-5 py-16 text-center md:py-24">
+            <h2 className="font-display text-3xl leading-tight tracking-tight text-foreground uppercase sm:text-4xl">
+              Convide para o seu evento
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+              Agendas abertas para cultos, congressos e conferências. Fale diretamente pelo
+              WhatsApp.
+            </p>
+            <a
+              href={site.whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-opacity hover:opacity-90"
+            >
+              <MessageCircle size={16} /> {site.whatsappNumero}
+            </a>
+          </div>
         </section>
       </main>
 
