@@ -1,14 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Instagram, Menu, Music2, X, Youtube } from "lucide-react";
 
 import { site } from "@/data/site";
 
 const links = [
   { to: "/", label: "Início" },
-  { to: "/sobre", label: "Sobre" },
   { to: "/mensagens", label: "Mensagens" },
   { to: "/contato", label: "Contato" },
+] as const;
+
+const sociais = [
+  { href: site.youtube, label: "YouTube", Icon: Youtube },
+  { href: site.instagram, label: "Instagram", Icon: Instagram },
+  { href: site.tiktok, label: "TikTok", Icon: Music2 },
 ] as const;
 
 export function Header() {
@@ -16,8 +21,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link to="/" className="font-display text-lg tracking-[0.18em] text-foreground uppercase">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4">
+        <Link
+          to="/"
+          className="font-display text-lg tracking-[0.18em] text-foreground uppercase"
+        >
           {site.nome}
         </Link>
 
@@ -35,13 +43,27 @@ export function Header() {
           ))}
         </nav>
 
+        <div className="hidden items-center gap-4 md:flex">
+          {sociais.map(({ href, label, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={label}
+              className="text-muted-foreground transition-colors hover:text-accent"
+            >
+              <Icon size={19} />
+            </a>
+          ))}
+        </div>
+
         <button
           type="button"
           aria-label="Abrir menu"
           onClick={() => setOpen((v) => !v)}
           className="text-foreground md:hidden"
         >
-          {open ? <Menu size={22} className="hidden" /> : null}
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
@@ -58,6 +80,21 @@ export function Header() {
               {l.label}
             </Link>
           ))}
+          <div className="flex items-center gap-5 px-5 py-3">
+            {sociais.map(({ href, label, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                onClick={() => setOpen(false)}
+                className="text-muted-foreground transition-colors hover:text-accent"
+              >
+                <Icon size={20} />
+              </a>
+            ))}
+          </div>
         </nav>
       ) : null}
     </header>
