@@ -53,22 +53,41 @@ function Home() {
                 Pregador brasileiro levando esperança e a Palavra a igrejas, congressos e eventos
                 por todo o Brasil. Acompanhe o ministério nas redes sociais.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap items-center gap-3">
                 <a
                   href={site.youtube}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold tracking-wide text-accent-foreground uppercase transition-opacity hover:opacity-90"
+                  aria-label="YouTube"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
                 >
-                  <Youtube size={16} /> Assistir no YouTube
+                  <Youtube size={20} />
                 </a>
                 <a
-                  href="#mensagens"
-                  className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 px-6 py-3 text-sm font-semibold tracking-wide text-primary-foreground uppercase transition-colors hover:bg-primary-foreground/10"
+                  href={site.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
                 >
-                  Ver vídeos <ArrowRight size={16} />
+                  <Instagram size={20} />
+                </a>
+                <a
+                  href={site.tiktok}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="TikTok"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                >
+                  <Music2 size={20} />
                 </a>
               </div>
+              <a
+                href="#mensagens"
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] text-primary-foreground/90 uppercase transition-opacity hover:opacity-70"
+              >
+                Ver vídeos <ArrowRight size={16} />
+              </a>
             </div>
 
             <div className="relative">
