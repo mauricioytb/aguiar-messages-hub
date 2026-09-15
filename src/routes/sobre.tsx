@@ -30,11 +30,11 @@ function Sobre() {
       <Header />
       <main className="mx-auto max-w-6xl px-5 py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          <div className="overflow-hidden rounded-2xl border border-border/60 shadow-[var(--shadow-soft)]">
+          <div className="aspect-4/5 overflow-hidden rounded-2xl border border-border/60 shadow-[var(--shadow-soft)]">
             <img
               src={heroImage}
               alt="Pb. Maurício Aguiar ministrando"
-              className="h-full w-full object-cover"
+              className="h-full w-full scale-[1.12] object-cover"
             />
           </div>
           <div>

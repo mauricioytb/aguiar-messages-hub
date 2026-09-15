@@ -33,7 +33,10 @@ function Home() {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-[var(--gradient-hero)]">
+        <section
+          className="relative overflow-hidden"
+          style={{ backgroundImage: "var(--gradient-hero)" }}
+        >
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
             <div>
               <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-accent uppercase">
@@ -67,11 +70,11 @@ function Home() {
             </div>
 
             <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-[var(--shadow-strong)]">
+              <div className="aspect-4/5 overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-[var(--shadow-strong)]">
                 <img
                   src={heroImage}
                   alt="Pb. Maurício Aguiar pregando no púlpito"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full scale-[1.12] object-cover"
                 />
               </div>
             </div>
