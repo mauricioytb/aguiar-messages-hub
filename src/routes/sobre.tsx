@@ -19,6 +19,8 @@ export const Route = createFileRoute("/sobre")({
         property: "og:description",
         content: "A trajetória e o chamado do pregador Maurício Aguiar.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Sobre,

@@ -22,6 +22,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Um chamado. Uma mensagem. Uma missão. Siga o Pb. Maurício Aguiar nas redes sociais.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -59,7 +61,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="YouTube"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-youtube text-social-foreground transition-opacity hover:opacity-90"
                 >
                   <Youtube size={20} />
                 </a>
@@ -68,7 +70,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-instagram text-social-foreground transition-opacity hover:opacity-90"
                 >
                   <Instagram size={20} />
                 </a>
@@ -77,7 +79,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="TikTok"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tiktok text-social-foreground transition-opacity hover:opacity-90"
                 >
                   <Music2 size={20} />
                 </a>
