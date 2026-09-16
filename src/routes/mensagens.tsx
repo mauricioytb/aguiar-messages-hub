@@ -19,6 +19,8 @@ export const Route = createFileRoute("/mensagens")({
         property: "og:description",
         content: "Assista e acompanhe as pregações do Pb. Maurício Aguiar.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Mensagens,

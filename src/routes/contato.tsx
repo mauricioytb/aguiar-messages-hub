@@ -20,6 +20,8 @@ export const Route = createFileRoute("/contato")({
         property: "og:description",
         content: "Convites para cultos, congressos e conferências.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Contato,

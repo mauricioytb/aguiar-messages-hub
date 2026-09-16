@@ -22,6 +22,8 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Um chamado. Uma mensagem. Uma missão. Siga o Pb. Maurício Aguiar nas redes sociais.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
@@ -59,7 +61,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="YouTube"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-youtube text-social-foreground transition-opacity hover:opacity-90"
                 >
                   <Youtube size={20} />
                 </a>
@@ -68,7 +70,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-instagram text-social-foreground transition-opacity hover:opacity-90"
                 >
                   <Instagram size={20} />
                 </a>
@@ -77,7 +79,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="TikTok"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent text-accent-foreground transition-opacity hover:opacity-90"
+                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tiktok text-social-foreground transition-opacity hover:opacity-90"
                 >
                   <Music2 size={20} />
                 </a>
@@ -102,9 +104,6 @@ function Home() {
           </div>
         </section>
 
-        {/* Redes sociais */}
-        <RedesSociais />
-
         {/* Vídeos / Mensagens */}
         <section id="mensagens" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 md:py-24">
           <SectionHeading
@@ -123,6 +122,26 @@ function Home() {
           >
             Ver todas as mensagens <ArrowRight size={16} />
           </Link>
+        </section>
+
+        {/* Redes sociais */}
+        <RedesSociais />
+
+        {/* Apresentação */}
+        <section className="border-t border-border/60">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
+            <div>
+              <SectionHeading eyebrow="Sobre" title="Maurício Aguiar" />
+              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                Pregador brasileiro dedicado a anunciar o evangelho com convicção e sensibilidade.
+                Suas mensagens unem profundidade bíblica e linguagem acessível, levando fé,
+                restauração e esperança a pessoas de todas as idades.
+              </p>
+            </div>
+            <blockquote className="border-l-2 border-accent pl-6 font-display text-2xl leading-snug tracking-wide text-foreground uppercase">
+              “Um chamado. Uma mensagem. Uma missão.”
+            </blockquote>
+          </div>
         </section>
 
         {/* Contato */}
