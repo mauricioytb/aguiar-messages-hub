@@ -4,6 +4,11 @@ import { redes } from "@/data/site";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
 const icons = { youtube: Youtube, instagram: Instagram, tiktok: Music2 } as const;
+const iconStyles = {
+  youtube: "bg-youtube text-social-foreground",
+  instagram: "bg-instagram text-social-foreground",
+  tiktok: "bg-tiktok text-social-foreground",
+} as const;
 
 export function RedesSociais() {
   return (
@@ -25,7 +30,7 @@ export function RedesSociais() {
                 rel="noreferrer"
                 className="group flex flex-col items-start rounded-2xl border border-border/60 bg-card p-7 shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:border-accent"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <span className={`flex h-12 w-12 items-center justify-center rounded-xl ${iconStyles[r.id]}`}>
                   <Icon size={22} />
                 </span>
                 <p className="mt-5 text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase">

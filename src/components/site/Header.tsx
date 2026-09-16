@@ -11,9 +11,9 @@ const links = [
 ] as const;
 
 const sociais = [
-  { href: site.youtube, label: "YouTube", Icon: Youtube },
-  { href: site.instagram, label: "Instagram", Icon: Instagram },
-  { href: site.tiktok, label: "TikTok", Icon: Music2 },
+  { href: site.youtube, label: "YouTube", Icon: Youtube, className: "text-youtube" },
+  { href: site.instagram, label: "Instagram", Icon: Instagram, className: "text-instagram" },
+  { href: site.tiktok, label: "TikTok", Icon: Music2, className: "text-tiktok" },
 ] as const;
 
 export function Header() {
@@ -44,14 +44,14 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          {sociais.map(({ href, label, Icon }) => (
+          {sociais.map(({ href, label, Icon, className }) => (
             <a
               key={label}
               href={href}
               target="_blank"
               rel="noreferrer"
               aria-label={label}
-              className="text-muted-foreground transition-colors hover:text-accent"
+              className={`${className} transition-opacity hover:opacity-70`}
             >
               <Icon size={19} />
             </a>
@@ -81,7 +81,7 @@ export function Header() {
             </Link>
           ))}
           <div className="flex items-center gap-5 px-5 py-3">
-            {sociais.map(({ href, label, Icon }) => (
+            {sociais.map(({ href, label, Icon, className }) => (
               <a
                 key={label}
                 href={href}
@@ -89,7 +89,7 @@ export function Header() {
                 rel="noreferrer"
                 aria-label={label}
                 onClick={() => setOpen(false)}
-                className="text-muted-foreground transition-colors hover:text-accent"
+                className={`${className} transition-opacity hover:opacity-70`}
               >
                 <Icon size={20} />
               </a>
