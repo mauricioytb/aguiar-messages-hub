@@ -58,23 +58,21 @@ function Home() {
               <div className="mt-8 flex flex-nowrap items-center gap-2">
                 {(
                   [
-                    { id: "youtube", label: "YouTube", href: site.youtube, Icon: Youtube, bg: "var(--youtube)" },
-                    { id: "instagram", label: "Instagram", href: site.instagram, Icon: Instagram, bg: "var(--instagram)" },
-                    { id: "tiktok", label: "TikTok", href: site.tiktok, Icon: Music2, bg: "var(--tiktok)" },
+                    { id: "youtube", label: "YouTube", href: site.youtube, Icon: Youtube, bg: "bg-youtube", edge: "var(--youtube)" },
+                    { id: "instagram", label: "Instagram", href: site.instagram, Icon: Instagram, bg: "bg-instagram", edge: "var(--instagram)" },
+                    { id: "tiktok", label: "TikTok", href: site.tiktok, Icon: Music2, bg: "bg-tiktok", edge: "var(--tiktok)" },
                   ] as const
-                ).map(({ id, label, href, Icon, bg }) => (
+                ).map(({ id, label, href, Icon, bg, edge }) => (
                   <a
                     key={id}
                     href={href}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    style={{ "--btn-bg": bg } as React.CSSProperties}
-                    className="social-3d inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-current px-3 text-sm font-semibold text-social-foreground sm:px-4 [&.social-3d]:bg-current"
+                    style={{ "--btn-bg": edge } as React.CSSProperties}
+                    className={`social-3d inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full ${bg} px-3 text-sm font-semibold text-social-foreground sm:px-4`}
                   >
-                    <span className={`flex h-full -ml-3 items-center sm:-ml-4 ${id === "youtube" ? "text-youtube" : id === "instagram" ? "text-instagram" : "text-tiktok"}`}>
-                      <Icon size={18} />
-                    </span>
+                    <Icon size={18} />
                     {label}
                   </a>
                 ))}
