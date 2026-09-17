@@ -6,7 +6,7 @@ import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
 import { RedesSociais } from "@/components/site/RedesSociais";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { Button } from "@/components/ui/button";
+
 import { heroImage, mensagens, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
