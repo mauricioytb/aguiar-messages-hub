@@ -55,25 +55,27 @@ function Home() {
               <p className="mt-5 font-display text-xl tracking-normal text-primary-foreground/90 uppercase sm:text-2xl">
                 {site.tagline}
               </p>
-              <div className="mt-8 flex flex-nowrap items-center gap-2">
+              <div className="mt-8 grid w-full max-w-md grid-cols-3 gap-2">
                 {(
                   [
-                    { id: "youtube", label: "YouTube", href: site.youtube, Icon: Youtube, bg: "bg-youtube", edge: "var(--youtube)" },
-                    { id: "instagram", label: "Instagram", href: site.instagram, Icon: Instagram, bg: "bg-instagram", edge: "var(--instagram)" },
-                    { id: "tiktok", label: "TikTok", href: site.tiktok, Icon: Music2, bg: "bg-tiktok", edge: "var(--tiktok)" },
+                    { id: "youtube", label: "YouTube", href: site.youtube, Icon: Youtube, accent: "bg-youtube" },
+                    { id: "instagram", label: "Instagram", href: site.instagram, Icon: Instagram, accent: "bg-instagram" },
+                    { id: "tiktok", label: "TikTok", href: site.tiktok, Icon: Music2, accent: "bg-accent" },
                   ] as const
-                ).map(({ id, label, href, Icon, bg, edge }) => (
+                ).map(({ id, label, href, Icon, accent }) => (
                   <a
                     key={id}
                     href={href}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={label}
-                    style={{ "--btn-bg": edge } as React.CSSProperties}
-                    className={`social-3d inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full ${bg} px-3 text-sm font-semibold text-social-foreground sm:px-4`}
+                    className="group relative flex flex-col items-center justify-center gap-2 overflow-hidden rounded-xl border border-white/10 bg-white/5 py-5 px-2 backdrop-blur-xl transition-all hover:bg-white/10 active:scale-95"
                   >
-                    <Icon size={18} />
-                    {label}
+                    <span className={`absolute inset-x-0 bottom-0 h-[3px] ${accent}`} aria-hidden="true" />
+                    <Icon size={26} className="text-primary-foreground" />
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-primary-foreground/80">
+                      {label}
+                    </span>
                   </a>
                 ))}
               </div>
