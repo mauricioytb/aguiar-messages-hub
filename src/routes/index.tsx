@@ -6,6 +6,7 @@ import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
 import { RedesSociais } from "@/components/site/RedesSociais";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { Button } from "@/components/ui/button";
 import { heroImage, mensagens, site } from "@/data/site";
 
 export const Route = createFileRoute("/")({
@@ -36,53 +37,40 @@ function Home() {
 
       <main>
         {/* Hero */}
-        <section
-          className="relative overflow-hidden"
-          style={{ backgroundImage: "var(--gradient-hero)" }}
-        >
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
-            <div>
-              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-accent uppercase">
+        <section className="relative isolate flex min-h-[calc(100svh-69px)] items-end overflow-hidden">
+          <img
+            src={heroImage}
+            alt="Pb. Maurício Aguiar pregando no púlpito"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-[64%_center] md:object-center"
+          />
+          <div className="absolute inset-0 -z-10 bg-primary/65 md:bg-primary/50" aria-hidden="true" />
+          <div className="mx-auto w-full max-w-6xl px-5 py-14 md:py-20">
+            <div className="max-w-xl">
+              <p className="mb-4 text-xs font-semibold tracking-[0.3em] text-primary-foreground/85 uppercase">
                 {site.titulo}
               </p>
-              <h1 className="font-display text-5xl leading-[0.9] tracking-tight text-primary-foreground uppercase sm:text-6xl">
+              <h1 className="font-display text-5xl leading-[0.9] tracking-normal text-primary-foreground uppercase sm:text-6xl md:text-7xl">
                 Mauricio Aguiar
               </h1>
-              <p className="mt-5 font-display text-xl tracking-wide text-primary-foreground/85 uppercase">
+              <p className="mt-5 font-display text-xl tracking-normal text-primary-foreground/90 uppercase sm:text-2xl">
                 {site.tagline}
               </p>
-              <p className="mt-6 max-w-md text-base leading-relaxed text-primary-foreground/75">
-                Pregador brasileiro levando esperança e a Palavra a igrejas, congressos e eventos
-                por todo o Brasil. Acompanhe o ministério nas redes sociais.
-              </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <a
-                  href={site.youtube}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="YouTube"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-youtube text-social-foreground transition-opacity hover:opacity-90"
-                >
-                  <Youtube size={20} />
-                </a>
-                <a
-                  href={site.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Instagram"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-instagram text-social-foreground transition-opacity hover:opacity-90"
-                >
-                  <Instagram size={20} />
-                </a>
-                <a
-                  href={site.tiktok}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="TikTok"
-                  className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-tiktok text-social-foreground transition-opacity hover:opacity-90"
-                >
-                  <Music2 size={20} />
-                </a>
+              <div className="mt-8 flex flex-wrap items-center gap-2.5">
+                <Button asChild className="h-11 bg-youtube px-4 text-social-foreground hover:bg-youtube/90">
+                  <a href={site.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
+                    <Youtube /> YouTube
+                  </a>
+                </Button>
+                <Button asChild className="h-11 bg-instagram px-4 text-social-foreground hover:bg-instagram/90">
+                  <a href={site.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
+                    <Instagram /> Instagram
+                  </a>
+                </Button>
+                <Button asChild className="h-11 bg-tiktok px-4 text-social-foreground hover:bg-tiktok/90">
+                  <a href={site.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
+                    <Music2 /> TikTok
+                  </a>
+                </Button>
               </div>
               <a
                 href="#mensagens"
@@ -90,16 +78,6 @@ function Home() {
               >
                 Ver vídeos <ArrowRight size={16} />
               </a>
-            </div>
-
-            <div className="relative">
-              <div className="aspect-4/5 overflow-hidden rounded-2xl border border-primary-foreground/15 shadow-[var(--shadow-strong)]">
-                <img
-                  src={heroImage}
-                  alt="Pb. Maurício Aguiar pregando no púlpito"
-                  className="h-full w-full scale-[1.12] object-cover"
-                />
-              </div>
             </div>
           </div>
         </section>

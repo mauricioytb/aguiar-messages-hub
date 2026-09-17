@@ -11,3 +11,4 @@ Manter o estilo atual, usando a foto de Maurício como fundo da primeira parte d
 - Remover o parágrafo “Pregador brasileiro...” da abertura.
 - Ajustar contraste e espaçamento somente quando necessário para desktop e celular.
 - Manter as demais seções e a identidade visual sem alterações.
+- deixe os botoes de redes sociais mais realistas
