@@ -55,22 +55,29 @@ function Home() {
               <p className="mt-5 font-display text-xl tracking-normal text-primary-foreground/90 uppercase sm:text-2xl">
                 {site.tagline}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-2.5">
-                <Button asChild className="h-11 bg-youtube px-4 text-social-foreground hover:bg-youtube/90">
-                  <a href={site.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
-                    <Youtube /> YouTube
+              <div className="mt-8 flex flex-nowrap items-center gap-2">
+                {(
+                  [
+                    { id: "youtube", label: "YouTube", href: site.youtube, Icon: Youtube, bg: "var(--youtube)" },
+                    { id: "instagram", label: "Instagram", href: site.instagram, Icon: Instagram, bg: "var(--instagram)" },
+                    { id: "tiktok", label: "TikTok", href: site.tiktok, Icon: Music2, bg: "var(--tiktok)" },
+                  ] as const
+                ).map(({ id, label, href, Icon, bg }) => (
+                  <a
+                    key={id}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    style={{ "--btn-bg": bg } as React.CSSProperties}
+                    className="social-3d inline-flex h-11 items-center gap-1.5 whitespace-nowrap rounded-full bg-current px-3 text-sm font-semibold text-social-foreground sm:px-4 [&.social-3d]:bg-current"
+                  >
+                    <span className={`flex h-full -ml-3 items-center sm:-ml-4 ${id === "youtube" ? "text-youtube" : id === "instagram" ? "text-instagram" : "text-tiktok"}`}>
+                      <Icon size={18} />
+                    </span>
+                    {label}
                   </a>
-                </Button>
-                <Button asChild className="h-11 bg-instagram px-4 text-social-foreground hover:bg-instagram/90">
-                  <a href={site.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
-                    <Instagram /> Instagram
-                  </a>
-                </Button>
-                <Button asChild className="h-11 bg-tiktok px-4 text-social-foreground hover:bg-tiktok/90">
-                  <a href={site.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok">
-                    <Music2 /> TikTok
-                  </a>
-                </Button>
+                ))}
               </div>
               <a
                 href="#mensagens"
