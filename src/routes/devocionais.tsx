@@ -37,7 +37,7 @@ function Devocionais() {
           title="Devocionais em vídeo"
           description="Mensagens curtas para o seu dia a dia. Clique para assistir direto no YouTube."
         />
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {devocionais.map((d) => (
             <DevocionalCard key={d.id} devocional={d} />
           ))}
