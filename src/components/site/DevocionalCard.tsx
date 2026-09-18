@@ -1,31 +1,68 @@
-import { Play, Youtube } from "lucide-react";
+import { Play } from "lucide-react";
 
-import { site, type Devocional } from "@/data/site";
+import { youtubeUrl, type Devocional } from "@/data/site";
+
+/** Miniatura oficial do YouTube em máxima resolução, com fallback. */
+const youtubeThumb = (id: string) =>
+  `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
 
 export function DevocionalCard({ devocional }: { devocional: Devocional }) {
   const href = devocional.youtubeId
-    ? `https://www.youtube.com/watch?v=${devocional.youtubeId}`
-    : site.youtube;
+    ? youtubeUrl(devocional.youtubeId)
+    : undefined;
+  const capa = devocional.youtubeId
+    ? youtubeThumb(devocional.youtubeId)
+    : undefined;
+
+  const className =
+    "group block overflow-hidden rounded-xl border border-border/60 bg-card shadow-[var(--shadow-soft)] transition-transform duration-300 hover:-translate-y-1";
+
+  const content = (
+    <>
+      <div className="relative aspect-video overflow-hidden bg-secondary">
+        {capa ? (
+          <img
+            src={capa}
+            alt={`Capa do devocional ${devocional.titulo}`}
+            loading="lazy"
+            onError={(e) => {
+              const img = e.currentTarget;
+              const fallback = img.src.replace(
+                "maxresdefault.jpg",
+                "hqdefault.jpg",
+              );
+              if (img.src !== fallback) img.src = fallback;
+            }}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : null}
+        <span className="absolute inset-0 flex items-center justify-center">
+          <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent/95 text-accent-foreground shadow-lg ring-1 ring-white/30 transition-transform duration-300 group-hover:scale-110">
+            <Play size={22} className="translate-x-0.5 fill-current" />
+          </span>
+        </span>
+      </div>
+      <div className="p-5">
+        <h3 className="font-display text-lg leading-tight tracking-wide text-foreground uppercase">
+          {devocional.titulo}
+        </h3>
+      </div>
+    </>
+  );
+
+  if (!href) {
+    return <article className={className}>{content}</article>;
+  }
 
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
+      className={className}
       aria-label={`Assistir "${devocional.titulo}" no YouTube`}
-      className="group flex items-center gap-5 rounded-xl border border-border/60 bg-card p-5 shadow-[var(--shadow-soft)] transition-transform duration-300 hover:-translate-y-1"
     >
-      <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110">
-        <Play size={22} className="translate-x-0.5 fill-current" />
-      </span>
-      <div className="min-w-0">
-        <h3 className="font-display text-lg leading-tight tracking-wide text-foreground uppercase">
-          {devocional.titulo}
-        </h3>
-        <p className="mt-1 inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.14em] text-accent uppercase">
-          <Youtube size={14} /> Assistir no YouTube
-        </p>
-      </div>
+      {content}
     </a>
   );
 }
