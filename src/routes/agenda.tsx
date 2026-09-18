@@ -4,7 +4,7 @@ import { CalendarDays, MapPin } from "lucide-react";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { site } from "@/data/site";
+import { agenda, site } from "@/data/site";
 
 export const Route = createFileRoute("/agenda")({
   head: () => ({
@@ -35,29 +35,7 @@ type Evento = {
   cidade: string;
 };
 
-const eventos: Evento[] = [
-  {
-    id: "evt-1",
-    data: "2026-10-11",
-    titulo: "Culto de Avivamento",
-    local: "Igreja Central",
-    cidade: "Recife, PE",
-  },
-  {
-    id: "evt-2",
-    data: "2026-11-08",
-    titulo: "Congresso de Jovens",
-    local: "Templo Sede",
-    cidade: "Caruaru, PE",
-  },
-  {
-    id: "evt-3",
-    data: "2026-12-06",
-    titulo: "Conferência de Fé",
-    local: "Arena Municipal",
-    cidade: "Olinda, PE",
-  },
-];
+const eventos: Evento[] = agenda;
 
 const formatarData = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
