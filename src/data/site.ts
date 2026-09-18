@@ -73,9 +73,41 @@ export type Devocional = {
 };
 
 export const devocionais: Devocional[] = [
-  { id: "devocional-01", titulo: "Devocional 01" },
-  { id: "devocional-02", titulo: "Devocional 02" },
-  { id: "devocional-03", titulo: "Devocional 03" },
+  {
+    id: "deus-quer-te-perdoar",
+    titulo: "Deus quer te perdoar — Salmos 23",
+    youtubeId: "4aua3vlz1vI",
+  },
+  {
+    id: "as-misericordias-de-deus",
+    titulo: "As misericórdias de Deus",
+    youtubeId: "WnUB5LCnBls",
+  },
+  {
+    id: "paz-em-meio-ao-caos",
+    titulo: "Paz em meio ao caos — Salmos 29",
+    youtubeId: "jPBOYwlwnqQ",
+  },
+  {
+    id: "a-bondade-de-deus",
+    titulo: "A bondade de Deus",
+    youtubeId: "SQnX_d7GIVc",
+  },
+  {
+    id: "devocional-salmos-23",
+    titulo: "Devocional — Salmos 23",
+    youtubeId: "36XDU67UVnM",
+  },
+  {
+    id: "devocional-isaias-5",
+    titulo: "Devocional — Isaías 5",
+    youtubeId: "2e7DeKgZNp4",
+  },
+  {
+    id: "deus-esta-contigo",
+    titulo: "Deus está contigo",
+    youtubeId: "oF842ojn9oI",
+  },
 ];
 
 /**
