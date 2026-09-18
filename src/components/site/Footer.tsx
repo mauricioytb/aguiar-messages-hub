@@ -1,6 +1,15 @@
 import { Instagram, MessageCircle, Music2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 import { site } from "@/data/site";
+
+const navLinks = [
+  { to: "/", label: "Início" },
+  { to: "/mensagens", label: "Mensagens" },
+  { to: "/devocionais", label: "Devocionais" },
+  { to: "/agenda", label: "Agenda" },
+  { to: "/contato", label: "Contato" },
+] as const;
 
 export function Footer() {
   return (
@@ -10,6 +19,18 @@ export function Footer() {
           {site.titulo}
         </p>
         <p className="text-sm text-muted-foreground">{site.tagline}</p>
+
+        <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+          {navLinks.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className="text-xs font-semibold tracking-[0.14em] text-muted-foreground uppercase transition-colors hover:text-accent"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
 
         <div className="flex items-center gap-5">
           <a

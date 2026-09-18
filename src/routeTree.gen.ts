@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgendaRouteImport } from './routes/agenda'
 import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as DevocionaisRouteImport } from './routes/devocionais'
 import { Route as MensagensRouteImport } from './routes/mensagens'
 import { Route as SobreRouteImport } from './routes/sobre'
 
@@ -19,9 +21,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AgendaRoute = AgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContatoRoute = ContatoRouteImport.update({
   id: '/contato',
   path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevocionaisRoute = DevocionaisRouteImport.update({
+  id: '/devocionais',
+  path: '/devocionais',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MensagensRoute = MensagensRouteImport.update({
@@ -37,34 +49,50 @@ const SobreRoute = SobreRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
   '/contato': typeof ContatoRoute
+  '/devocionais': typeof DevocionaisRoute
   '/mensagens': typeof MensagensRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
   '/contato': typeof ContatoRoute
+  '/devocionais': typeof DevocionaisRoute
   '/mensagens': typeof MensagensRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
   '/contato': typeof ContatoRoute
+  '/devocionais': typeof DevocionaisRoute
   '/mensagens': typeof MensagensRoute
   '/sobre': typeof SobreRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contato' | '/mensagens' | '/sobre'
+  fullPaths:
+    '/' | '/agenda' | '/contato' | '/devocionais' | '/mensagens' | '/sobre'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contato' | '/mensagens' | '/sobre'
-  id: '__root__' | '/' | '/contato' | '/mensagens' | '/sobre'
+  to: '/' | '/agenda' | '/contato' | '/devocionais' | '/mensagens' | '/sobre'
+  id:
+    | '__root__'
+    | '/'
+    | '/agenda'
+    | '/contato'
+    | '/devocionais'
+    | '/mensagens'
+    | '/sobre'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgendaRoute: typeof AgendaRoute
   ContatoRoute: typeof ContatoRoute
+  DevocionaisRoute: typeof DevocionaisRoute
   MensagensRoute: typeof MensagensRoute
   SobreRoute: typeof SobreRoute
 }
@@ -78,11 +106,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/agenda': {
+      id: '/agenda'
+      path: '/agenda'
+      fullPath: '/agenda'
+      preLoaderRoute: typeof AgendaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contato': {
       id: '/contato'
       path: '/contato'
       fullPath: '/contato'
       preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/devocionais': {
+      id: '/devocionais'
+      path: '/devocionais'
+      fullPath: '/devocionais'
+      preLoaderRoute: typeof DevocionaisRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mensagens': {
@@ -104,7 +146,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgendaRoute: AgendaRoute,
   ContatoRoute: ContatoRoute,
+  DevocionaisRoute: DevocionaisRoute,
   MensagensRoute: MensagensRoute,
   SobreRoute: SobreRoute,
 }

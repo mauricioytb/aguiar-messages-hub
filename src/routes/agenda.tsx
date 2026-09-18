@@ -61,9 +61,9 @@ const eventos: Evento[] = [
 
 const formatarData = (iso: string) => {
   const [y, m, d] = iso.split("-").map(Number);
-  const data = new Date(y, m - 1, d);
+  const data = new Date(y ?? 1970, (m ?? 1) - 1, d ?? 1);
   return {
-    dia: String(d).padStart(2, "0"),
+    dia: String(d ?? 1).padStart(2, "0"),
     mes: data.toLocaleDateString("pt-BR", { month: "short" }).replace(".", ""),
     extenso: data.toLocaleDateString("pt-BR", {
       weekday: "long",
