@@ -60,3 +60,56 @@ export const mensagens: Mensagem[] = [
     youtubeId: "MUhXbMms6kU",
   },
 ];
+
+/**
+ * Devocionais em vídeo no YouTube.
+ * Estrutura preparada para receber dados da API do YouTube no futuro:
+ * basta preencher `youtubeId` e trocar a origem desta lista por um fetch.
+ */
+export type Devocional = {
+  id: string;
+  titulo: string;
+  youtubeId?: string;
+};
+
+export const devocionais: Devocional[] = [
+  { id: "devocional-01", titulo: "Devocional 01" },
+  { id: "devocional-02", titulo: "Devocional 02" },
+  { id: "devocional-03", titulo: "Devocional 03" },
+];
+
+/**
+ * Agenda de eventos.
+ * Itens de exemplo — substitua pelos eventos reais quando disponíveis.
+ */
+export type EventoAgenda = {
+  id: string;
+  data: string; // ISO yyyy-mm-dd
+  titulo: string;
+  local: string;
+  cidade: string;
+};
+
+export const agenda: EventoAgenda[] = [
+  {
+    id: "evt-1",
+    data: "2026-10-11",
+    titulo: "Culto de Avivamento",
+    local: "Igreja Central",
+    cidade: "Recife, PE",
+  },
+  {
+    id: "evt-2",
+    data: "2026-11-08",
+    titulo: "Congresso de Jovens",
+    local: "Templo Sede",
+    cidade: "Caruaru, PE",
+  },
+  {
+    id: "evt-3",
+    data: "2026-12-06",
+    titulo: "Conferência de Fé",
+    local: "Arena Municipal",
+    cidade: "Olinda, PE",
+  },
+];
