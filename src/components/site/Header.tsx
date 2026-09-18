@@ -7,6 +7,8 @@ import { site } from "@/data/site";
 const links = [
   { to: "/", label: "Início" },
   { to: "/mensagens", label: "Mensagens" },
+  { to: "/devocionais", label: "Devocionais" },
+  { to: "/agenda", label: "Agenda" },
   { to: "/contato", label: "Contato" },
 ] as const;
 
