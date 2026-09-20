@@ -56,15 +56,17 @@ async function fetchPlaylist(playlistId: string): Promise<Mensagem[] | null> {
     const json = (await res.json()) as PlaylistItemsResponse;
     const items = json.items ?? [];
 
-    return items
-      .map((item) => {
-        const videoId = item.snippet?.resourceId?.videoId;
-        const titulo = cleanTitle(item.snippet?.title ?? "");
-        return videoId
-          ? { id: videoId, titulo, youtubeId: videoId }
-          : null;
-      })
-      .filter((m): m is Mensagem => m !== null);
+    const result: Mensagem[] = [];
+    for (const item of items) {
+      const videoId = item.snippet?.resourceId?.videoId;
+      if (!videoId) continue;
+      result.push({
+        id: videoId,
+        titulo: cleanTitle(item.snippet?.title ?? ""),
+        youtubeId: videoId,
+      });
+    }
+    return result;
   } catch {
     return null;
   }
