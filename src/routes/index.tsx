@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowRight, Instagram, MessageCircle, Music2, Youtube } from "lucide-react";
 
 import { Footer } from "@/components/site/Footer";
@@ -7,7 +8,8 @@ import { MensagemCard } from "@/components/site/MensagemCard";
 import { RedesSociais } from "@/components/site/RedesSociais";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
-import { heroImage, mensagens, site } from "@/data/site";
+import { heroImage, site } from "@/data/site";
+import { mensagensQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,10 +29,13 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(mensagensQuery),
   component: Home,
 });
 
 function Home() {
+  const { data: mensagens } = useSuspenseQuery(mensagensQuery);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -97,7 +102,7 @@ function Home() {
             description="Uma seleção de pregações disponíveis no canal do YouTube. Clique para assistir."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {mensagens.map((m) => (
+            {mensagens.slice(0, 6).map((m) => (
               <MensagemCard key={m.id} mensagem={m} />
             ))}
           </div>

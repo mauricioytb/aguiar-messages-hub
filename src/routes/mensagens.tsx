@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
 
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { mensagens } from "@/data/site";
+import { mensagensQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/mensagens")({
   head: () => ({
@@ -23,10 +24,13 @@ export const Route = createFileRoute("/mensagens")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(mensagensQuery),
   component: Mensagens,
 });
 
 function Mensagens() {
+  const { data: mensagens } = useSuspenseQuery(mensagensQuery);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
