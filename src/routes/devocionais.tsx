@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
 
 import { DevocionalCard } from "@/components/site/DevocionalCard";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { devocionais } from "@/data/site";
+import { devocionaisQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/devocionais")({
   head: () => ({
@@ -24,10 +25,13 @@ export const Route = createFileRoute("/devocionais")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+  loader: ({ context }) => context.queryClient.ensureQueryData(devocionaisQuery),
   component: Devocionais,
 });
 
 function Devocionais() {
+  const { data: devocionais } = useSuspenseQuery(devocionaisQuery);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
