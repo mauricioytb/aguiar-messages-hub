@@ -11,11 +11,10 @@
 export const YOUTUBE_CHANNEL_ID = "UC6D8WlNAZdft1rK6Ua_tEKw";
 
 /**
- * Playlist "uploads" do canal — gerada a partir do channelId trocando o
- * prefixo `UC` por `UU`. A YouTube Data API lista os vídeos do canal a
- * partir dela.
+ * Playlist de pregações do Pb. Maurício Aguiar.
+ * Contém apenas as pregações, não todos os vídeos do canal.
  */
-export const YOUTUBE_UPLOADS_PLAYLIST_ID = `UU${YOUTUBE_CHANNEL_ID.slice(2)}`;
+export const YOUTUBE_UPLOADS_PLAYLIST_ID = "PLW7mV9gcqx6A";
 
 /** Playlist "Devocionais | Pb. Mauricio aguiar". */
 export const YOUTUBE_DEVOCIONAIS_PLAYLIST_ID = "PLSqR5AzF1N54";

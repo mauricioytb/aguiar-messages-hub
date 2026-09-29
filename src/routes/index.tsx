@@ -46,7 +46,7 @@ function Home() {
           <img
             src={heroImage}
             alt="Pb. Maurício Aguiar pregando no púlpito"
-            className="absolute inset-0 -z-20 h-full w-full object-cover object-[64%_center] md:object-center"
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
           />
           <div className="absolute inset-0 -z-10 bg-primary/65 md:bg-primary/50" aria-hidden="true" />
           <div className="mx-auto w-full max-w-6xl px-5 py-14 md:py-20">
