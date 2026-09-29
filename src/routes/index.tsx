@@ -117,23 +117,6 @@ function Home() {
         {/* Redes sociais */}
         <RedesSociais />
 
-        {/* Apresentação */}
-        <section className="border-t border-border/60">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.2fr_0.8fr] md:items-center md:py-24">
-            <div>
-              <SectionHeading eyebrow="Sobre" title="Maurício Aguiar" />
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                Pregador brasileiro dedicado a anunciar o evangelho com convicção e sensibilidade.
-                Suas mensagens unem profundidade bíblica e linguagem acessível, levando fé,
-                restauração e esperança a pessoas de todas as idades.
-              </p>
-            </div>
-            <blockquote className="border-l-2 border-accent pl-6 font-display text-2xl leading-snug tracking-wide text-foreground uppercase">
-              “Um chamado. Uma mensagem. Uma missão.”
-            </blockquote>
-          </div>
-        </section>
-
         {/* Contato */}
         <section className="border-t border-border/60 bg-secondary/40">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center md:py-24">
