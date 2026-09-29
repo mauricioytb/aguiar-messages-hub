@@ -1,5 +1,3 @@
-import capaHero from "@/assets/mauricio-pregando.jpg.asset.json";
-
 export const site = {
   nome: "Mauricio Aguiar",
   titulo: "Pb. Maurício Aguiar",
@@ -11,7 +9,7 @@ export const site = {
   tiktok: "https://tiktok.com/@mauricioaguiaroficial",
 };
 
-export const heroImage = capaHero.url;
+export const heroImage = "/mauricio-hero.jpg";
 
 /**
  * Redes sociais oficiais.
