@@ -89,8 +89,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Mensagens que despertam a fé. Ministério do Pb. Maurício Aguiar.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/mauricio-hero.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/mauricio-hero.jpg" },
       { name: "twitter:site", content: "@Lovable" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Maurício Aguiar",
+          jobTitle: "Pregador",
+          url: "https://www.youtube.com/@MauricioAguiarcanal",
+          sameAs: [
+            "https://www.youtube.com/@MauricioAguiarcanal",
+            "https://instagram.com/mauricioaguiaroficial",
+            "https://tiktok.com/@mauricioaguiaroficial",
+          ],
+          description: "Pregador brasileiro dedicado a anunciar o evangelho com convicção e sensibilidade.",
+        }),
+      },
     ],
     links: [
       {

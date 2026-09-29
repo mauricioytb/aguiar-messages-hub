@@ -52,7 +52,12 @@ async function fetchPlaylist(playlistId: string): Promise<Mensagem[] | null> {
 
   try {
     const res = await fetch(url, { headers: { accept: "application/json" } });
-    if (!res.ok) return null;
+    if (!res.ok) {
+      console.error(
+        `[YouTube API] Failed to fetch playlist ${playlistId}: ${res.status} ${res.statusText}`,
+      );
+      return null;
+    }
     const json = (await res.json()) as PlaylistItemsResponse;
     const items = json.items ?? [];
 
@@ -67,7 +72,11 @@ async function fetchPlaylist(playlistId: string): Promise<Mensagem[] | null> {
       });
     }
     return result;
-  } catch {
+  } catch (error) {
+    console.error(
+      `[YouTube API] Error fetching playlist ${playlistId}:`,
+      error instanceof Error ? error.message : String(error),
+    );
     return null;
   }
 }
