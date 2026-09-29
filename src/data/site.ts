@@ -115,8 +115,7 @@ export const devocionais: Devocional[] = [
 ];
 
 /**
- * Agenda de eventos.
- * Itens de exemplo — substitua pelos eventos reais quando disponíveis.
+ * Agenda de eventos do Pb. Maurício Aguiar.
  */
 export type EventoAgenda = {
   id: string;
@@ -128,24 +127,59 @@ export type EventoAgenda = {
 
 export const agenda: EventoAgenda[] = [
   {
-    id: "evt-1",
-    data: "2026-10-11",
-    titulo: "Culto de Avivamento",
-    local: "Igreja Central",
-    cidade: "Recife, PE",
+    id: "evt-oct-1",
+    data: "2026-10-03",
+    titulo: "Ministério em Paraná",
+    local: "Paraná",
+    cidade: "Paraná",
   },
   {
-    id: "evt-2",
-    data: "2026-11-08",
-    titulo: "Congresso de Jovens",
-    local: "Templo Sede",
-    cidade: "Caruaru, PE",
+    id: "evt-oct-2",
+    data: "2026-10-10",
+    titulo: "Ministério em Sergipe",
+    local: "Sergipe",
+    cidade: "Sergipe",
   },
   {
-    id: "evt-3",
-    data: "2026-12-06",
-    titulo: "Conferência de Fé",
-    local: "Arena Municipal",
-    cidade: "Olinda, PE",
+    id: "evt-oct-3",
+    data: "2026-10-15",
+    titulo: "Ministério em Santa Catarina",
+    local: "Santa Catarina",
+    cidade: "Santa Catarina",
+  },
+  {
+    id: "evt-oct-4",
+    data: "2026-10-31",
+    titulo: "Ministério em São Paulo",
+    local: "São Paulo",
+    cidade: "São Paulo",
+  },
+  {
+    id: "evt-nov-1",
+    data: "2026-11-07",
+    titulo: "Ministério em Santa Catarina",
+    local: "Santa Catarina",
+    cidade: "Santa Catarina",
+  },
+  {
+    id: "evt-nov-2",
+    data: "2026-11-14",
+    titulo: "Ministério em Foz do Iguaçu",
+    local: "Foz do Iguaçu",
+    cidade: "Foz do Iguaçu, PR",
+  },
+  {
+    id: "evt-nov-3",
+    data: "2026-11-21",
+    titulo: "Ministério na Bahia",
+    local: "Bahia",
+    cidade: "Bahia",
+  },
+  {
+    id: "evt-nov-4",
+    data: "2026-11-27",
+    titulo: "Ministério na Bahia",
+    local: "Bahia",
+    cidade: "Bahia",
   },
 ];
