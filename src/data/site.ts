@@ -42,24 +42,17 @@ export type Mensagem = {
 
 export const mensagens: Mensagem[] = [
   { id: "quando-deus-se-cala", titulo: "Quando Deus se cala", youtubeId: "5Px3AFxvHoA" },
-  { id: "deus-quer-te-perdoar", titulo: "Deus quer te perdoar — Salmos 23", youtubeId: "4aua3vlz1vI" },
   { id: "deus-nao-vai-desistir-de-ti", titulo: "Deus não vai desistir de ti", youtubeId: "qDGIytwyruU" },
   { id: "deus-precisa-te-pesar", titulo: "Deus precisa te pesar", youtubeId: "0456t7I-QxY" },
   { id: "coracao-angustiado", titulo: "Coração angustiado", youtubeId: "MUhXbMms6kU" },
-  { id: "as-misericordias-de-deus", titulo: "As misericórdias de Deus", youtubeId: "WnUB5LCnBls" },
   { id: "ainda-nao-e-o-fim", titulo: "Ainda não é o fim", youtubeId: "hhstmPytvfo" },
   { id: "deus-conhece-tua-dor", titulo: "Deus conhece tua dor", youtubeId: "fz9c9lhlTIw" },
-  { id: "paz-em-meio-ao-caos", titulo: "Paz em meio ao caos — Salmos 29", youtubeId: "jPBOYwlwnqQ" },
   { id: "uma-fonte-na-solidao", titulo: "Uma fonte na solidão", youtubeId: "s57V86Q4l_4" },
   { id: "nao-fuja-de-deus", titulo: "Não fuja de Deus", youtubeId: "fHtMSZG_GUs" },
   { id: "tu-es-a-escolha-de-deus", titulo: "Tu és a escolha de Deus", youtubeId: "iKoBzZvV5o8" },
   { id: "deus-conhece-tua-estrutura", titulo: "Deus conhece tua estrutura", youtubeId: "TrzEigYAV_c" },
-  { id: "a-bondade-de-deus", titulo: "A bondade de Deus", youtubeId: "SQnX_d7GIVc" },
-  { id: "devocional-salmos-23", titulo: "Devocional — Salmos 23", youtubeId: "36XDU67UVnM" },
-  { id: "devocional-isaias-5", titulo: "Devocional — Isaías 5", youtubeId: "2e7DeKgZNp4" },
   { id: "teu-passado-nao-importa", titulo: "Teu passado não importa", youtubeId: "aqfvUs_m2uo" },
   { id: "veja-de-onde-deus-te-tirou", titulo: "Veja de onde Deus te tirou", youtubeId: "ud9ydJVGVfQ" },
-  { id: "deus-esta-contigo", titulo: "Deus está contigo", youtubeId: "oF842ojn9oI" },
   { id: "meu-testemunho", titulo: "Meu testemunho — Deus mudou meus planos", youtubeId: "RzANDqP2a_c" },
 ];
 
