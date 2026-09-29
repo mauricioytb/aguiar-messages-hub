@@ -1,10 +1,7 @@
 import { Play } from "lucide-react";
 
+import { youtubeThumb, youtubeThumbFallback } from "@/data/youtube";
 import { youtubeUrl, type Devocional } from "@/data/site";
-
-/** Miniatura oficial do YouTube em máxima resolução, com fallback. */
-const youtubeThumb = (id: string) =>
-  `https://img.youtube.com/vi/${id}/maxresdefault.jpg`;
 
 export function DevocionalCard({ devocional }: { devocional: Devocional }) {
   const href = devocional.youtubeId
@@ -27,11 +24,9 @@ export function DevocionalCard({ devocional }: { devocional: Devocional }) {
             loading="lazy"
             onError={(e) => {
               const img = e.currentTarget;
-              const fallback = img.src.replace(
-                "maxresdefault.jpg",
-                "hqdefault.jpg",
-              );
-              if (img.src !== fallback) img.src = fallback;
+              if (devocional.youtubeId && img.src === youtubeThumb(devocional.youtubeId)) {
+                img.src = youtubeThumbFallback(devocional.youtubeId);
+              }
             }}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
