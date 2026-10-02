@@ -26,7 +26,23 @@ export const Route = createFileRoute("/")({
         content: "Um chamado. Uma mensagem. Uma missão. Siga o Pb. Maurício Aguiar nas redes sociais.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://mauricioaguiar.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://mauricioaguiar.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Pb. Maurício Aguiar",
+          url: "https://mauricioaguiar.lovable.app/",
+          description:
+            "Site oficial do pregador Pb. Maurício Aguiar. Mensagens em vídeo, devocionais e agenda de eventos.",
+          inLanguage: "pt-BR",
+        }),
+      },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(mensagensQuery),

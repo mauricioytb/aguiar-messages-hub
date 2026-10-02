@@ -21,7 +21,34 @@ export const Route = createFileRoute("/contato")({
         content: "Convites para cultos, congressos e conferências.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://mauricioaguiar.lovable.app/contato" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://mauricioaguiar.lovable.app/contato" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contato e Convites — Pb. Maurício Aguiar",
+          url: "https://mauricioaguiar.lovable.app/contato",
+          description:
+            "Convites para cultos, congressos e conferências. Fale com o Pb. Maurício Aguiar pelo WhatsApp.",
+          inLanguage: "pt-BR",
+          mainEntity: {
+            "@type": "Person",
+            name: "Maurício Aguiar",
+            jobTitle: "Pregador",
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "Convites e agendas",
+              url: site.whatsappLink,
+              availableLanguage: "Portuguese",
+            },
+          },
+        }),
+      },
     ],
   }),
   component: Contato,

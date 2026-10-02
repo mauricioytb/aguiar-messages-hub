@@ -21,7 +21,28 @@ export const Route = createFileRoute("/mensagens")({
         content: "Assista e acompanhe as pregações do Pb. Maurício Aguiar.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://mauricioaguiar.lovable.app/mensagens" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "https://mauricioaguiar.lovable.app/mensagens" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Mensagens — Pb. Maurício Aguiar",
+          url: "https://mauricioaguiar.lovable.app/mensagens",
+          description:
+            "Pregações e mensagens em vídeo do Pb. Maurício Aguiar, ministradas em cultos, congressos e conferências.",
+          inLanguage: "pt-BR",
+          about: {
+            "@type": "Person",
+            name: "Maurício Aguiar",
+            jobTitle: "Pregador",
+          },
+        }),
+      },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(mensagensQuery),
