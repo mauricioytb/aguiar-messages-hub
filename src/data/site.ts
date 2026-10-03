@@ -41,19 +41,20 @@ export type Mensagem = {
 };
 
 export const mensagens: Mensagem[] = [
+  { id: "tempo-de-restituicao", titulo: "Tempo de restituição", youtubeId: "FCMjatTh15o" },
+  { id: "amigos-de-deus", titulo: "Amigos de Deus", youtubeId: "elIlgc_WGJk" },
+  { id: "a-graca-que-te-mantem-de-pe", titulo: "A graça que te mantém de pé", youtubeId: "i28j2yu0vmc" },
+  { id: "desprezados", titulo: "Desprezados", youtubeId: "d2RzUK9SC5s" },
   { id: "quando-deus-se-cala", titulo: "Quando Deus se cala", youtubeId: "5Px3AFxvHoA" },
   { id: "deus-nao-vai-desistir-de-ti", titulo: "Deus não vai desistir de ti", youtubeId: "qDGIytwyruU" },
+  { id: "nao-bote-teu-coracao-nos-lugares-errados", titulo: "Não bote teu coração nos lugares errados", youtubeId: "i93Rjmql-64" },
   { id: "deus-precisa-te-pesar", titulo: "Deus precisa te pesar", youtubeId: "0456t7I-QxY" },
-  { id: "coracao-angustiado", titulo: "Coração angustiado", youtubeId: "MUhXbMms6kU" },
   { id: "ainda-nao-e-o-fim", titulo: "Ainda não é o fim", youtubeId: "hhstmPytvfo" },
   { id: "deus-conhece-tua-dor", titulo: "Deus conhece tua dor", youtubeId: "fz9c9lhlTIw" },
+  { id: "testemunho", titulo: "Testemunho", youtubeId: "iPci5gv09Oc" },
   { id: "uma-fonte-na-solidao", titulo: "Uma fonte na solidão", youtubeId: "s57V86Q4l_4" },
   { id: "nao-fuja-de-deus", titulo: "Não fuja de Deus", youtubeId: "fHtMSZG_GUs" },
-  { id: "tu-es-a-escolha-de-deus", titulo: "Tu és a escolha de Deus", youtubeId: "iKoBzZvV5o8" },
   { id: "deus-conhece-tua-estrutura", titulo: "Deus conhece tua estrutura", youtubeId: "TrzEigYAV_c" },
-  { id: "teu-passado-nao-importa", titulo: "Teu passado não importa", youtubeId: "aqfvUs_m2uo" },
-  { id: "veja-de-onde-deus-te-tirou", titulo: "Veja de onde Deus te tirou", youtubeId: "ud9ydJVGVfQ" },
-  { id: "meu-testemunho", titulo: "Meu testemunho — Deus mudou meus planos", youtubeId: "RzANDqP2a_c" },
 ];
 
 /**
