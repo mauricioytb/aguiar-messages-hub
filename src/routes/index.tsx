@@ -8,7 +8,7 @@ import { MensagemCard } from "@/components/site/MensagemCard";
 import { RedesSociais } from "@/components/site/RedesSociais";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
-import { heroImage, site } from "@/data/site";
+import { site } from "@/data/site";
 import { mensagensQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/")({
