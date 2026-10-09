@@ -8,7 +8,7 @@ import { MensagemCard } from "@/components/site/MensagemCard";
 import { RedesSociais } from "@/components/site/RedesSociais";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
-import { heroImage, site } from "@/data/site";
+import { site } from "@/data/site";
 import { mensagensQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +27,16 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://mauricioaguiar.lovable.app/" },
+      {
+        property: "og:image",
+        content: "https://mauricioaguiar.lovable.app/mauricio-hero.jpg",
+      },
+      { property: "og:image:alt", content: "Pb. Maurício Aguiar pregando no púlpito" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:image",
+        content: "https://mauricioaguiar.lovable.app/mauricio-hero.jpg",
+      },
     ],
     links: [{ rel: "canonical", href: "https://mauricioaguiar.lovable.app/" }],
     scripts: [
@@ -59,11 +68,14 @@ function Home() {
       <main>
         {/* Hero */}
         <section className="relative isolate flex min-h-[calc(100svh-69px)] items-end overflow-hidden">
-          <img
-            src={heroImage}
-            alt="Pb. Maurício Aguiar pregando no púlpito"
-            className="absolute inset-0 -z-20 h-full w-full object-cover object-[center_30%]"
-          />
+          <picture>
+            <source media="(max-width: 767px)" srcSet="/mauricio-hero-mobile.jpg" />
+            <img
+              src="/mauricio-hero.jpg"
+              alt="Pb. Maurício Aguiar pregando no púlpito"
+              className="absolute inset-0 -z-20 h-full w-full object-cover object-[center_30%] md:object-center"
+            />
+          </picture>
           <div className="absolute inset-0 -z-10 bg-primary/65 md:bg-primary/50" aria-hidden="true" />
           <div className="mx-auto w-full max-w-6xl px-5 py-14 md:py-20">
             <div className="max-w-xl">
