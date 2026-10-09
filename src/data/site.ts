@@ -41,6 +41,7 @@ export type Mensagem = {
 };
 
 export const mensagens: Mensagem[] = [
+  { id: "escolhas-improvaveis", titulo: "Escolhas improváveis", youtubeId: "joUJi0NFWXg" },
   { id: "tempo-de-restituicao", titulo: "Tempo de restituição", youtubeId: "FCMjatTh15o" },
   { id: "amigos-de-deus", titulo: "Amigos de Deus", youtubeId: "elIlgc_WGJk" },
   { id: "a-graca-que-te-mantem-de-pe", titulo: "A graça que te mantém de pé", youtubeId: "i28j2yu0vmc" },
