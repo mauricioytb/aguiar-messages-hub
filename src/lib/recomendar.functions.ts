@@ -10,7 +10,7 @@ export const recomendarPregacoes = createServerFn({ method: "POST" })
     z.object({ texto: z.string().trim().min(3).max(600) }).parse(data),
   )
   .handler(async ({ data }): Promise<{ itens: Recomendacao[]; erro?: string }> => {
-    const key = process.env.LOVABLE_API_KEY;
+    const key = process.env['LOVABLE_API_KEY'];
     if (!key) return { itens: [], erro: "Recurso indisponível no momento." };
 
     const catalogo = mensagens.map((m) => `${m.id}: ${m.titulo}`).join("\n");
