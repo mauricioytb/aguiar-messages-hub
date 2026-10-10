@@ -4,6 +4,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
+import { RecomendadorPregacoes } from "@/components/site/RecomendadorPregacoes";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { mensagensQuery } from "@/lib/youtube-queries";
 
@@ -61,6 +62,9 @@ function Mensagens() {
           title="Pregações"
           description="Uma seleção de mensagens ministradas em cultos, congressos e conferências."
         />
+        <div className="mt-10">
+          <RecomendadorPregacoes />
+        </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {mensagens.map((m) => (
             <MensagemCard key={m.id} mensagem={m} />
