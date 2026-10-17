@@ -63,18 +63,19 @@ export function BannerCampanha() {
           >
             Responder e receber o link do grupo
           </a>
-          <p className="text-[11px] font-medium text-primary-foreground/70">
-            Leva menos de um minuto · é gratuito
-          </p>
-        </div>
-          <button
-            type="button"
-            aria-label="Fechar aviso"
-            onClick={fechar}
-            className="rounded-full p-1.5 text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-          >
-            <X size={18} />
-          </button>
+          <div className="flex items-center gap-3">
+            <p className="text-[11px] font-medium text-primary-foreground/70">
+              Leva menos de um minuto · é gratuito
+            </p>
+            <button
+              type="button"
+              aria-label="Fechar aviso"
+              onClick={fechar}
+              className="rounded-full p-1 text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+            >
+              <X size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
