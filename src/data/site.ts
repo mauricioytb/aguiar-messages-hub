@@ -7,6 +7,8 @@ export const site = {
   youtube: "https://www.youtube.com/@MauricioAguiarcanal",
   instagram: "https://instagram.com/mauricioaguiaroficial",
   tiktok: "https://tiktok.com/@mauricioaguiaroficial",
+  /** Formulário da campanha: ao responder, a pessoa recebe o link do grupo. */
+  pesquisaLink: "https://mauricioaguiar.autoridade.digital/",
 };
 
 export const heroImage = "/mauricio-hero.jpg";
