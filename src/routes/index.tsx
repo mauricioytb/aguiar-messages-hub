@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { ArrowRight, Instagram, MessageCircle, Music2, Youtube } from "lucide-react";
 
+import { BannerCampanha } from "@/components/site/BannerCampanha";
 import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
@@ -63,6 +64,7 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-background">
+      <BannerCampanha />
       <Header />
 
       <main>
