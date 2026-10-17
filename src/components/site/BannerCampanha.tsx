@@ -54,23 +54,28 @@ export function BannerCampanha() {
           </p>
         </div>
 
-        <div className="flex shrink-0 items-center gap-3">
+        <div className="flex shrink-0 flex-col items-center gap-2 md:items-end">
           <a
-            href={`${site.instagram}?utm_source=site&utm_medium=banner&utm_campaign=estudo-biblico`}
+            href={`${site.pesquisaLink}?utm_source=site&utm_medium=banner&utm_campaign=estudo-biblico`}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-accent px-5 py-2.5 text-xs font-bold tracking-[0.14em] text-accent-foreground uppercase transition-opacity hover:opacity-90"
+            className="rounded-full bg-accent px-5 py-2.5 text-center text-xs font-bold tracking-[0.14em] text-accent-foreground uppercase transition-opacity hover:opacity-90"
           >
-            Comente ESTUDO e garanta seu convite
+            Responder e receber o link do grupo
           </a>
-          <button
-            type="button"
-            aria-label="Fechar aviso"
-            onClick={fechar}
-            className="rounded-full p-1.5 text-primary-foreground/70 transition-colors hover:text-primary-foreground"
-          >
-            <X size={18} />
-          </button>
+          <div className="flex items-center gap-3">
+            <p className="text-[11px] font-medium text-primary-foreground/70">
+              Leva menos de um minuto · é gratuito
+            </p>
+            <button
+              type="button"
+              aria-label="Fechar aviso"
+              onClick={fechar}
+              className="rounded-full p-1 text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+            >
+              <X size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
