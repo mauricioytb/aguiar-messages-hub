@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { site } from "@/data/site";
 
 export const Route = createFileRoute("/contato")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Contato e Convites — Pb. Maurício Aguiar" },

@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { mensagensQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/mensagens")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Mensagens — Pb. Maurício Aguiar" },
