@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Instagram, MessageCircle, Music2 } from "lucide-react";
 
 import { Footer } from "@/components/site/Footer";
+import { GrupoWhatsapp } from "@/components/site/GrupoWhatsapp";
 import { Header } from "@/components/site/Header";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { site } from "@/data/site";
