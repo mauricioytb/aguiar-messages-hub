@@ -9,6 +9,9 @@ export const site = {
   tiktok: "https://tiktok.com/@mauricioaguiaroficial",
   /** Formulário da campanha: ao responder, a pessoa recebe o link do grupo. */
   pesquisaLink: "https://mauricioaguiar.autoridade.digital/",
+  /** Link de convite do grupo oficial no WhatsApp. */
+  grupoWhatsappLink:
+    "https://chat.whatsapp.com/K4IXwvTkjp18M7IREplkR4?s=cl&p=i&mlu=4&ilr=4&iam=2",
 };
 
 export const heroImage = "/mauricio-hero.jpg";
