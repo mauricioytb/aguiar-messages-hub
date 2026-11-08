@@ -89,6 +89,7 @@ function Contato() {
           ))}
         </div>
       </main>
+      <GrupoWhatsapp />
       <Footer />
     </div>
   );

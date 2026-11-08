@@ -148,6 +148,9 @@ function Home() {
         {/* Redes sociais */}
         <RedesSociais />
 
+        {/* Grupo do WhatsApp */}
+        <GrupoWhatsapp />
+
         {/* Contato */}
         <section className="border-t border-border/60 bg-secondary/40">
           <div className="mx-auto max-w-6xl px-5 py-16 text-center md:py-24">
