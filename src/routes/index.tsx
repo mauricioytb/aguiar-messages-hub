@@ -4,6 +4,7 @@ import { ArrowRight, Instagram, MessageCircle, Music2, Youtube } from "lucide-re
 
 import { BannerCampanha } from "@/components/site/BannerCampanha";
 import { Footer } from "@/components/site/Footer";
+import { GrupoWhatsapp } from "@/components/site/GrupoWhatsapp";
 import { Header } from "@/components/site/Header";
 import { MensagemCard } from "@/components/site/MensagemCard";
 import { RedesSociais } from "@/components/site/RedesSociais";
@@ -146,6 +147,9 @@ function Home() {
 
         {/* Redes sociais */}
         <RedesSociais />
+
+        {/* Grupo do WhatsApp */}
+        <GrupoWhatsapp />
 
         {/* Contato */}
         <section className="border-t border-border/60 bg-secondary/40">
