@@ -8,6 +8,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { devocionaisQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/devocionais")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Devocionais — Pb. Maurício Aguiar" },

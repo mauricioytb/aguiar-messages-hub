@@ -14,6 +14,7 @@ import { site } from "@/data/site";
 import { mensagensQuery } from "@/lib/youtube-queries";
 
 export const Route = createFileRoute("/")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Pb. Maurício Aguiar — Pregador" },

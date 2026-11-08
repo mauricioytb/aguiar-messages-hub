@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { agenda, site } from "@/data/site";
 
 export const Route = createFileRoute("/agenda")({
+  staticData: { sitemap: true },
   head: () => ({
     meta: [
       { title: "Agenda — Pb. Maurício Aguiar" },
